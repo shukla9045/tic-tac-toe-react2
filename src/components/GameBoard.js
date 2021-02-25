@@ -82,12 +82,15 @@ const GameBoard = () => {
       if (move >= 3) {
         if (checkWinlose(gameState)) {
           setTimeout(() => {
-            alert(`win ${currentPlayer}`);
+            alert(`PLAYER ${currentPlayer} HAS WON !HURRAH`);
           }, 500);
+          nextPlayer = null;
+          setCurrentPlayer(nextPlayer);
+          setMove(1);
         } else {
           if (move === 9) {
             setTimeout(() => {
-              alert("Draw");
+              alert("GAME IS DRAW YOU CAN RESTART GAME");
             }, 500);
             nextPlayer = null;
             setMove(1);
